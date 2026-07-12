@@ -3,40 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Gourmet Kitchen | Order Online</title>
+    <title>The Gourmet Bistro - Menu</title>
     <style>
-        /* Simplified styles for brevity - full CSS in reference */
-        * { box-sizing: border-box; font-family: sans-serif; }
-        body { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://unsplash.com') center/cover fixed; color: white; margin: 0; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 300px; gap: 20px; }
-        header { grid-column: 1 / -1; text-align: center; color: #ffbe33; }
-        .menu-item { background: rgba(0,0,0,0.5); padding: 15px; margin-bottom: 10px; border-radius: 8px; }
-        .cart-section { background: rgba(0,0,0,0.8); padding: 20px; position: sticky; top: 20px; height: fit-content; }
-        button { background: #ffbe33; border: none; padding: 10px; cursor: pointer; width: 100%; }
-        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
+        /* Base styles and background configuration */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Replace the URL below with your own image link if needed */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Semi-transparent container to make text highly readable */
+        .menu-container {
+            background: rgba(20, 20, 20, 0.85);
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        /* Header design */
+        .menu-header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px dashed #ffd700;
+            padding-bottom: 20px;
+        }
+
+        .menu-header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .menu-header p {
+            font-style: italic;
+            color: #ccc;
+            margin: 5px 0 0 0;
+        }
+
+        /* Section layout (e.g., Starters, Mains) */
+        .menu-section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #ffd700;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Individual grid item arrangement */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+        }
+
+        .item-info {
+            flex-grow: 1;
+            padding-right: 15px;
+        }
+
+        .item-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            color: #b3b3b3;
+            margin: 4px 0 0 0;
+        }
+
+        .item-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffd700;
+            white-space: nowrap;
+        }
+
+        /* Footer notice style */
+        .menu-footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
     </style>
 </head>
 <body>
-    <header><h1>The Gourmet Kitchen</h1></header>
-    <div class="container">
-        <main>
+
+    <div class="menu-container">
+        
+        <div class="menu-header">
+            <h1>The Gourmet Bistro</h1>
+            <p>Fresh Ingredients, Timeless Recipes</p>
+        </div>
+
+        <!-- Section 1: Appetizers -->
+        <div class="menu-section">
+            <div class="section-title">Appetizers</div>
+            
             <div class="menu-item">
-                <h3>Truffle Risotto</h3><p>$18.99</p>
-                <button onclick="addToCart('Truffle Risotto', 18.99)">Add to Cart</button>
+                <div class="item-info">
+                    <h3 class="item-name">Garlic Parmesan Bruschetta</h3>
+                    <p class="item-description">Toasted artisan bread topped with diced tomatoes, garlic, and fresh basil.</p>
+                </div>
+                <span class="item-price">$8.50</span>
             </div>
-            <!-- Additional items can be added here -->
-        </main>
-        <aside class="cart-section">
-            <h2>Your Order</h2>
-            <div id="cart-items">Empty</div>
-            <h3>Total: $<span id="cart-total">0.00</span></h3>
-        </aside>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3 class="item-name">Crispy Calamari</h3>
+                    <p class="item-description">Tender calamari lightly dusted in seasoned flour, served with spicy marinara.</p>
+                </div>
+                <span class="item-price">$12.00</span>
+            </div>
+        </div>
+
+        <!-- Section 2: Main Courses -->
+        <div class="menu-section">
+            <div class="section-title">Main Courses</div>
+            
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3 class="item-name">Pan-Seared Ribeye Steak</h3>
+                    <p class="item-description">12oz prime ribeye served with garlic mashed potatoes and grilled asparagus.</p>
+                </div>
+                <span class="item-price">$28.99</span>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3 class="item-name">Tuscan Cream Salmon</h3>
+                    <p class="item-description">Wild-caught salmon filet cooked in a rich garlic, spinach, and sun-dried tomato cream sauce.</p>
+                </div>
+                <span class="item-price">$24.50</span>
+            </div>
+        </div>
+
+        <!-- Section 3: Desserts -->
+        <div class="menu-section">
+            <div class="section-title">Desserts</div>
+            
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3 class="item-name">Classic Tiramisu</h3>
+                    <p class="item-description">Layers of espresso-soaked ladyfingers and velvety mascarpone cream.</p>
+                </div>
+                <span class="item-price">$7.00</span>
+            </div>
+        </div>
+
+        <!-- Footer Note -->
+        <div class="menu-footer">
+            <p>* Please inform your server of any food allergies before ordering.</p>
+        </div>
     </div>
-    <script>
-        // JavaScript logic for cart functionality, see full code in
-        let cart = [];
-        function addToCart(name, price) { /* Simplified logic */ alert(name + " added!"); }
-    </script>
+
 </body>
 </html>
-
